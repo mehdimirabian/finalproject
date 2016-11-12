@@ -27,8 +27,8 @@ def index():
     # most recent first, and you need to return that list here.
     # Note that posts is NOT a list of strings in your actual code; it is
     # what you get from a db(...).select(...).
-    posts = ['banana', 'pear', 'eggplant']
-    return dict(posts=posts)
+    info = ['banana', 'pear', 'eggplant']
+    return dict(info=info)
 
 
 @auth.requires_login()
