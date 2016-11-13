@@ -127,3 +127,4 @@ CREATE TABLE web2py_session_finalproject(
     session_data BLOB
 );
 success!
+success!

@@ -45,11 +45,11 @@ var app = function() {
             info: [],
             logged_in: false,
             form_skills: null,
-            form_available_times: null,
+            form_available_times: null
         },
         methods: {
             add_info_button: self.add_info_button,
-            add_info: self.add_info,
+            add_info: self.add_info
 
         }
 
