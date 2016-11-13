@@ -117,3 +117,11 @@ CREATE TABLE web2py_session_finalproject(
     session_data BLOB
 );
 success!
+timestamp: 2016-11-12T16:13:33.656000
+CREATE TABLE info(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_email CHAR(512),
+    skills TEXT,
+    available_times TIME
+);
+success!

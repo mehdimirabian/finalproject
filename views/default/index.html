@@ -1,29 +1,32 @@
 {{extend 'layout.html'}}
 
-<div class="post_listing center">
-{{if auth.user_id:}}
+{{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
 
-    <div class="post_list_header text-right">
-        <a href="{{=URL('default', 'edit')}}" class="btn btn-warning">
-            <i class="fa fa-plus"></i> New Post
-        </a>
-    </div>
+{{end}}
 
-{{else:}}
+<div class="main_content">
 
-    <div class="post_list_header text-right">
-        <a href="{{=URL('default', 'user', args=['login'])}}" class="btn btn-warning">Log In</a>
-    </div>
+    <h2>Tracks</h2>
 
-{{pass}}
 
-    <div class="post_list">
-    {{for p in info:}}
-        <div class="post text-left">
-            <!-- Here goes the code to display an individual post. The code below is just a placeholder. -->
-            {{=p}}
+    <div id="vue-div" class="display:none">
+        <div class="button_bar">
+            <button v-if="!is_adding_info" class="btn btn-danger btn-sm" v-on:click="add_info_button()">
+            {{=icon_add}}Add track
+            </button>
+            <button v-if="is_adding_info" class="btn btn-warning btn-sm" v-on:click="add_info_button()">
+            {{=icon_cancel}}Cancel
+            </button>
         </div>
-    {{pass}}
+
+
+
     </div>
+
 
 </div>
+
+</div>
+
+<script src="{{=URL('static', 'js/default_index.js')}}"></script>
