@@ -2,6 +2,9 @@
 
 {{block head}}
 <script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script>
+    var add_info_url = "{{=URL('api', 'add_info', user_signature=True)}}";
+</script>
 
 {{end}}
 
@@ -18,6 +21,29 @@
             <button v-if="is_adding_info" class="btn btn-warning btn-sm" v-on:click="add_info_button()">
             {{=icon_cancel}}Cancel
             </button>
+        </div>
+
+        <div v-if="is_adding_info" id="add_info_div">
+            <form action="#" v-on:submit.prevent="add_info" class="form-horizontal" enctype="multipart/form-data" method="post">
+                <div class="form-group" id="no_table_skills__row">
+                    <div>
+                        <input class="form-control string" id="no_table_skills" v-model="form_skills" placeholder="Skills" type="text" />
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="form-group" id="no_table_available_times__row">
+                    <div>
+                        <input class="form-control string" id="no_table_available_times" name="available_times" type="text" v-model="form_available_times" placeholder="Available"/>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="form-group" id="submit_record__row">
+                    <div>
+                        <input class="btn btn-primary" id="add_info_submit" type="submit" value="Submit" />
+                    </div>
+                </div>
+
+            </form>
         </div>
 
 
