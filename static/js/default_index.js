@@ -17,13 +17,48 @@ var app = function() {
 
 
 
+    self.show_cancel = function() {
+      if(self.vue.is_adding_info || self.vue.is_adding_info){
+          return true;
+      }
+      else {
+          return false;
+      }
+    };
+
+    self.show_add = function() {
+        if(!self.vue.is_adding_info && !self.vue.has_info_been_added){
+            alert(true);
+            return true;
+        }
+        else
+            alert(false);
+            return false;
+    };
+
+    self.show_edit = function () {
+        if(!self.vue.is_adding_info && self.vue.has_info_been_added){
+            return true;
+        }
+
+        else {
+            return false;
+        }
+    };
 
     self.add_info_button = function () {
         // The button to add a track has been pressed.
+
+        alert("has info been added ? " + self.vue.has_info_been_added);
         self.vue.is_adding_info = !self.vue.is_adding_info;
+        self.vue.has_info_been_added = true;
     };
 
-        self.add_info = function () {
+    self.add_edit_button = function () {
+        self.vue.is_editting_info = !self.vue.is_editting_info;
+    };
+
+    self.add_info = function () {
         // The submit button to add a track has been added.
         $.post(add_info_url,
             {
@@ -42,6 +77,8 @@ var app = function() {
         el: "#vue-div",
         data: {
             is_adding_info: false,
+            has_info_been_added: false,
+            is_editting_info: false,
             info: [],
             logged_in: false,
             form_skills: null,
@@ -49,7 +86,11 @@ var app = function() {
         },
         methods: {
             add_info_button: self.add_info_button,
-            add_info: self.add_info
+            add_info: self.add_info,
+            add_edit_button: self.add_edit_button,
+            //show_cancel: self.show_cancel(),
+            //show_add: self.show_add(),
+          //  show_edit: self.show_edit()
 
         }
 
