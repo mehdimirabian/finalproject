@@ -10,13 +10,13 @@
 
 <div class="main_content">
 
-    <h2>Tracks</h2>
+    <h2>Page</h2>
 
 
     <div id="vue-div" class="display:none">
         <div class="button_bar">
             <button v-if="!is_adding_info" class="btn btn-danger btn-sm" v-on:click="add_info_button()">
-            {{=icon_add}}Add track
+            {{=icon_add}}Add Info
             </button>
             <button v-if="is_adding_info" class="btn btn-warning btn-sm" v-on:click="add_info_button()">
             {{=icon_cancel}}Cancel
