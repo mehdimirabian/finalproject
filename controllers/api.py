@@ -38,3 +38,13 @@ def add_info():
     return response.json(dict(info=t))
 
 
+@auth.requires_signature()
+def edit_info():
+    t_id = db(db.info.id == request.vars.info_id).update(
+        skills = request.vars.skills,
+        available_times = request.vars.available_times
+    )
+    t = db.info(request.vars.info_id)
+    return response.json(dict(info=t))
+
+

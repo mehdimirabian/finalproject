@@ -50,8 +50,6 @@ var app = function() {
 
     self.add_info_button = function () {
         // The button to add a track has been pressed.
-
-        alert("has info been added ? " + self.vue.has_info_been_added);
         self.vue.is_adding_info = !self.vue.is_adding_info;
 
     };
@@ -76,7 +74,17 @@ var app = function() {
 
 
     self.edit_info = function () {
-        alert("it's in edit_info()");
+        $.post(edit_info_url,
+            {
+                skills: self.vue.form_skills,
+                available_times: self.vue.form_available_times
+            },
+            function (data) {
+                $.web2py.enableElement($("#edit_info_submit"));
+                self.vue.info.unshift(data.info);
+                // data.info.editable = true;
+                // self.vue.info.splice(idx, 1, data.info);
+            });
     };
 
 
