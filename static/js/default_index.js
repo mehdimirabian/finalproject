@@ -18,7 +18,7 @@ var app = function() {
 
 
     self.show_cancel = function() {
-      if(self.vue.is_adding_info || self.vue.is_adding_info){
+      if(self.vue.is_adding_info || self.vue.is_editing_info){
           return true;
       }
       else {
@@ -55,7 +55,7 @@ var app = function() {
     };
 
     self.add_edit_button = function () {
-        self.vue.is_editting_info = !self.vue.is_editting_info;
+        self.vue.is_editing_info = !self.vue.is_editing_info;
     };
 
     self.add_info = function () {
@@ -78,7 +78,7 @@ var app = function() {
         data: {
             is_adding_info: false,
             has_info_been_added: false,
-            is_editting_info: false,
+            is_editing_info: false,
             info: [],
             logged_in: false,
             form_skills: null,
