@@ -1,5 +1,5 @@
-timestamp: 2016-10-12T18:32:04.245046
-CREATE TABLE web2py_session_hw2(
+timestamp: 2016-11-14T11:48:05.670000
+CREATE TABLE web2py_session_finalproject(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     locked CHAR(1),
     client_ip CHAR(64),
@@ -9,7 +9,7 @@ CREATE TABLE web2py_session_hw2(
     session_data BLOB
 );
 success!
-timestamp: 2016-10-12T18:32:04.248154
+timestamp: 2016-11-14T11:48:05.831000
 CREATE TABLE auth_user(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name CHAR(128),
@@ -21,21 +21,21 @@ CREATE TABLE auth_user(
     registration_id CHAR(512)
 );
 success!
-timestamp: 2016-10-12T18:32:04.251841
+timestamp: 2016-11-14T11:48:05.939000
 CREATE TABLE auth_group(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     role CHAR(512),
     description TEXT
 );
 success!
-timestamp: 2016-10-12T18:32:04.253691
+timestamp: 2016-11-14T11:48:06.062000
 CREATE TABLE auth_membership(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
 );
 success!
-timestamp: 2016-10-12T18:32:04.255948
+timestamp: 2016-11-14T11:48:06.171000
 CREATE TABLE auth_permission(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
@@ -44,7 +44,7 @@ CREATE TABLE auth_permission(
     record_id INTEGER
 );
 success!
-timestamp: 2016-10-12T18:32:04.258239
+timestamp: 2016-11-14T11:48:06.281000
 CREATE TABLE auth_event(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     time_stamp TIMESTAMP,
@@ -54,7 +54,7 @@ CREATE TABLE auth_event(
     description TEXT
 );
 success!
-timestamp: 2016-10-12T18:32:04.260498
+timestamp: 2016-11-14T11:48:06.396000
 CREATE TABLE auth_cas(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
@@ -64,67 +64,11 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
-timestamp: 2016-10-12T18:32:04.265674
-CREATE TABLE post(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_email CHAR(512),
-    post_content TEXT,
-    created_on TIMESTAMP,
-    updated_on TIMESTAMP
-);
-success!
-timestamp: 2016-10-19T14:04:12.399000
-CREATE TABLE web2py_session_hw2_rev5(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    locked CHAR(1),
-    client_ip CHAR(64),
-    created_datetime TIMESTAMP,
-    modified_datetime TIMESTAMP,
-    unique_key CHAR(64),
-    session_data BLOB
-);
-success!
-timestamp: 2016-11-01T22:27:56.608000
-CREATE TABLE web2py_session_start(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    locked CHAR(1),
-    client_ip CHAR(64),
-    created_datetime TIMESTAMP,
-    modified_datetime TIMESTAMP,
-    unique_key CHAR(64),
-    session_data BLOB
-);
-success!
-timestamp: 2016-11-06T11:11:38.880000
-CREATE TABLE track(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    artist CHAR(512),
-    album CHAR(512),
-    title CHAR(512),
-    duration DOUBLE,
-    rating DOUBLE,
-    num_plays INTEGER,
-    created_by CHAR(512),
-    created_on CHAR(512)
-);
-success!
-timestamp: 2016-11-12T18:24:47.940000
+timestamp: 2016-11-14T11:48:06.525000
 CREATE TABLE info(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_email CHAR(512),
     skills TEXT,
-    available_times TIME
+    available_times TEXT
 );
-success!
-timestamp: 2016-11-12T18:51:59.408000
-CREATE TABLE web2py_session_finalproject(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    locked CHAR(1),
-    client_ip CHAR(64),
-    created_datetime TIMESTAMP,
-    modified_datetime TIMESTAMP,
-    unique_key CHAR(64),
-    session_data BLOB
-);
-success!
 success!

@@ -16,7 +16,7 @@
     <div id="vue-div" class="display:none">
         <div class="button_bar">
             <div v-if="!is_adding_info">
-                <div v-if = "!is_editing_info">
+                <div v-if = "!has_info_been_added">
 
                     <button class="btn btn-danger btn-sm" v-on:click="add_info_button()">
                     {{=icon_add}}Add Info
@@ -27,6 +27,21 @@
             <button v-if="is_adding_info" class="btn btn-warning btn-sm" v-on:click="add_info_button()">
             {{=icon_cancel}}Cancel
             </button>
+
+            <button v-if="is_editing_info" class="btn btn-warning btn-sm" v-on:click="edit_info_button()">
+            {{=icon_cancel}}Cancel
+            </button>
+
+            <div v-if="!is_adding_info">
+                <div v-if = "has_info_been_added">
+
+                    <button class="btn btn-info btn-sm" v-on:click="edit_info_button()">
+                    {{=icon_add}}edit
+                    </button>
+                </div>
+            </div>
+
+
         </div>
 
         <div v-if="is_adding_info" id="add_info_div">

@@ -15,7 +15,7 @@ var app = function() {
 
 
 
-
+/*
 
     self.show_cancel = function() {
       if(self.vue.is_adding_info || self.vue.is_editing_info){
@@ -46,6 +46,8 @@ var app = function() {
         }
     };
 
+   */
+
     self.add_info_button = function () {
         // The button to add a track has been pressed.
 
@@ -54,7 +56,7 @@ var app = function() {
         self.vue.has_info_been_added = true;
     };
 
-    self.add_edit_button = function () {
+    self.edit_info_button = function () {
         self.vue.is_editing_info = !self.vue.is_editing_info;
     };
 
@@ -87,10 +89,7 @@ var app = function() {
         methods: {
             add_info_button: self.add_info_button,
             add_info: self.add_info,
-            add_edit_button: self.add_edit_button,
-            //show_cancel: self.show_cancel(),
-            //show_add: self.show_add(),
-          //  show_edit: self.show_edit()
+            edit_info_button: self.edit_info_button
 
         }
 

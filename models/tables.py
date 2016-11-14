@@ -17,6 +17,7 @@ db.define_table('info',
 db.info.user_email.readable = db.info.user_email.writable = False
 db.info.skills.requires = IS_NOT_EMPTY()
 db.info.available_times.readable = db.info.available_times.writable = False
+print (db.tables)
 
 # after defining tables, uncomment below to enable auditing
 # auth.enable_record_versioning(db)
