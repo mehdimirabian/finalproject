@@ -76,7 +76,7 @@
 
 
         <div v-if="is_editing_info" id="edit_info_div">
-            <form action="#" v-on:submit.prevent="edit_info" class="form-horizontal" enctype="multipart/form-data" method="post">
+            <form action="#" v-on:submit.prevent="edit_info(24)" class="form-horizontal" enctype="multipart/form-data" method="post">
                 <div class="form-group" id="no_table_skills__row">
                     <div>
                         <input class="form-control string" id="no_table_skills" v-model="form_skills" placeholder="Skills" type="text" />
