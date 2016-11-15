@@ -7,6 +7,8 @@
 # There is an implicit 'id integer autoincrement' field
 # Consult manual for more options, validators, etc.
 
+
+
 db.define_table('info',
                 Field('user_email', default=auth.user.email if auth.user_id else None),
                 Field('skills', 'text'),

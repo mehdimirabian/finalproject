@@ -73,11 +73,10 @@ var app = function() {
     };
 
 
-    self.edit_info = function (info_id) {
-        alert(info_id);
+    self.edit_info = function () {
+
         $.post(edit_info_url,
             {
-                info_id: info_id,
                 skills: self.vue.form_skills,
                 available_times: self.vue.form_available_times
             },

@@ -40,9 +40,7 @@ def add_info():
 
 @auth.requires_signature()
 def edit_info():
-    print(db.info.id);
-    print(request.vars.info_id);
-    t_id = db(db.info.id == request.vars.info_id).update(
+    t_id = db(db.info.user_email == auth.user.email).update(
         skills = request.vars.skills,
         available_times = request.vars.available_times
     )
