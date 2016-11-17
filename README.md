@@ -9,8 +9,9 @@
  routers = dict(
 
     # base router
+    
     BASE=dict(
-        default_application='init',   #change this from welcome to init and add ALL for applications
+        default_application='init',       #change this from welcome to init and add ALL for applications
               applications='ALL'
               
 
