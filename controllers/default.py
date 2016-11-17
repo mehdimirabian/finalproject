@@ -7,6 +7,7 @@
 # - user is required for authentication and authorization
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
+from gluon.storage import Storage
 
 def get_user_name_from_email(email):
     """Returns a string corresponding to the user first and last names,
@@ -18,6 +19,7 @@ def get_user_name_from_email(email):
         return ' '.join([u.first_name, u.last_name])
 
 
+
 def index():
     """
     This is your main controller.
@@ -27,17 +29,18 @@ def index():
     # most recent first, and you need to return that list here.
     # Note that posts is NOT a list of strings in your actual code; it is
     # what you get from a db(...).select(...).
-    info = ['banana', 'pear', 'eggplant']
-    return dict(info=info)
+    if auth.user: redirect(URL('profile_info'))
+
+
+    return dict()
+
 
 
 @auth.requires_login()
-def edit():
-    """
-    This is the page to create / edit / delete a post.
-    """
-    return dict()
+def profile_info():
+    profile=get_user_name_from_email(auth.user.email)
 
+    return dict(profile=profile)
 
 def user():
     """
@@ -54,8 +57,12 @@ def user():
         @auth.requires_permission('read','table name',record_id)
     to decorate functions that need access control
     also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
+
     """
+
     return dict(form=auth())
+
+
 
 
 @cache.action()

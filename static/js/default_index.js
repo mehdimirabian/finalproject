@@ -92,6 +92,7 @@ var app = function() {
 
     self.vue = new Vue({
         el: "#vue-div",
+
         data: {
             is_adding_info: false,
             has_info_been_added: false,

@@ -76,6 +76,9 @@ mail.settings.login = myconf.get('smtp.login')
 mail.settings.tls = myconf.get('smtp.tls') or False
 mail.settings.ssl = myconf.get('smtp.ssl') or False
 
+
+
+
 # configure auth policy
 auth.settings.registration_requires_verification = False
 auth.settings.registration_requires_approval = False
@@ -97,3 +100,4 @@ logger.setLevel(logging.INFO)
 
 # Let's log the request.
 logger.info("====> Request: %r %r %r %r" % (request.env.request_method, request.env.path_info, request.args, request.vars))
+
