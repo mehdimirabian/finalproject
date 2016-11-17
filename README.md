@@ -4,7 +4,8 @@
  2.go to web2py/example/routes.parametric.py and move that to your web2py folder
  3.rename routes.parametric.py to routes.py
  4. modify the routes.py as following:
- #just change routes
+
+
  routers = dict(
 
     # base router
