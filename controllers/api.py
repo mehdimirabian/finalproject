@@ -28,6 +28,16 @@ def get_info():
         has_more=has_more,
     ))
 
+def does_info_exist():
+    row = db().select(db.info.user_email)
+    for r in row:
+        if auth.user.email == r['user_email']:
+            return True
+        else:
+            continue
+
+    return False
+
 @auth.requires_signature()
 def add_info():
     t_id = db.info.insert(

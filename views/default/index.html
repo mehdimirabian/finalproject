@@ -5,6 +5,7 @@
 <script>
     var add_info_url = "{{=URL('api', 'add_info', user_signature=True)}}";
     var edit_info_url = "{{=URL('api', 'edit_info', user_signature=True)}}";
+    var exists_info_url = "{{=URL('api', 'does_info_exist')}}";
 </script>
 
 {{end}}
@@ -12,7 +13,6 @@
 <div class="main_content">
 
     <h2>Page</h2>
-
 
     <div id="vue-div" class="display:none">
         <div class="button_bar">
