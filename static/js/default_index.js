@@ -50,6 +50,7 @@ var app = function() {
                 $.web2py.enableElement($("#add_info_submit"));
                 self.vue.info.unshift(data.info);
             });
+        location.reload();
     };
 
 
@@ -66,6 +67,7 @@ var app = function() {
                 // data.info.editable = true;
                 // self.vue.info.splice(idx, 1, data.info);
             });
+        location.reload();
     };
 
 
