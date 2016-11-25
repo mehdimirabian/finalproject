@@ -6,6 +6,7 @@
     var add_info_url = "{{=URL('api', 'add_info', user_signature=True)}}";
     var edit_info_url = "{{=URL('api', 'edit_info', user_signature=True)}}";
     var exists_info_url = "{{=URL('api', 'does_info_exist')}}";
+    var info_url = "{{=URL('api', 'get_info')}}";
 </script>
 
 {{end}}
@@ -15,6 +16,7 @@
     <h2>Page</h2>
 
     <div id="vue-div" class="display:none">
+        <button v-on:click="get_info()">get info</button>
         <div class="button_bar">
             <div v-if="!is_adding_info">
                 <div v-if="!is_editing_info">

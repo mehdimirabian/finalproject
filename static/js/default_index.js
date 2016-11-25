@@ -29,6 +29,13 @@ var app = function() {
 
     };
 
+    self.get_info = function() {
+        $.get(info_url, function(data){
+            alert(data.info.skills[0]);
+            self.vue.info = data.info;
+        })
+    };
+
     self.add_info_button = function () {
         // The button to add a track has been pressed.
         self.vue.is_adding_info = !self.vue.is_adding_info;
@@ -50,7 +57,8 @@ var app = function() {
                 $.web2py.enableElement($("#add_info_submit"));
                 self.vue.info.unshift(data.info);
             });
-        location.reload();
+        self.vue.is_adding_info = !self.vue.is_adding_info;
+        //location.reload();
     };
 
 
@@ -88,7 +96,8 @@ var app = function() {
             add_info: self.add_info,
             edit_info_button: self.edit_info_button,
             edit_info: self.edit_info,
-            does_info_exist: self.does_info_exist()
+            does_info_exist: self.does_info_exist(),
+            get_info: self.get_info()
 
         }
 
