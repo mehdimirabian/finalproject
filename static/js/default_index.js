@@ -30,9 +30,9 @@ var app = function() {
     };
 
     self.get_info = function() {
-        $.get(info_url, function(data){
-            alert(data.info.skills[0]);
-            self.vue.info = data.info;
+        $.getJSON(info_url, function(data){
+            self.vue.info = (data.info);
+            console.log(self.vue.info.skills);
         })
     };
 

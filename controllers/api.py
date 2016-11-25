@@ -14,9 +14,9 @@ def get_info():
             available_times=r.available_times
                 )
     print(info)
-    return (dict(
-        info=info,
-    ))
+    return response.json(
+        dict(info=info,
+             ))
 
 
 
