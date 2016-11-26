@@ -33,7 +33,9 @@ var app = function() {
         $.getJSON(info_url, function(data){
             self.vue.info = (data.info);
             console.log(self.vue.info.skills);
-        })
+        });
+
+
     };
 
     self.add_info_button = function () {
@@ -82,6 +84,8 @@ var app = function() {
 
     self.vue = new Vue({
         el: "#vue-div",
+        delimiters: ['${', '}'],
+        unsafeDelimiters: ['!{', '}'],
         data: {
             is_adding_info: false,
             has_info_been_added: false,
@@ -92,6 +96,7 @@ var app = function() {
             form_available_times: null
         },
         methods: {
+
             add_info_button: self.add_info_button,
             add_info: self.add_info,
             edit_info_button: self.edit_info_button,
@@ -102,7 +107,7 @@ var app = function() {
         }
 
     });
-
+    self.get_info();
     $("#vue-div").show();
 
 

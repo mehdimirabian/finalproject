@@ -1,7 +1,7 @@
 import random
+import traceback
 
-def index():
-    pass
+
 
 # Mocks implementation.
 def get_info():
@@ -16,7 +16,7 @@ def get_info():
     print(info)
     return response.json(
         dict(info=info,
-             ))
+     ))
 
 
 
