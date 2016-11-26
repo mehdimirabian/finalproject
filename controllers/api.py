@@ -2,7 +2,6 @@ import random
 import traceback
 
 
-
 # Mocks implementation.
 def get_info():
     rows = db().select(db.info.ALL)

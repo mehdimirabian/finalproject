@@ -12,13 +12,14 @@
 db.define_table('info',
                 Field('user_email', default=auth.user.email if auth.user_id else None),
                 Field('skills', 'text'),
-                Field('available_times', 'text')
+                Field('available_times', 'text'),
+                Field('image', 'upload')
                 )
 
 # I don't want to display the user email by default in all forms.
 db.info.user_email.readable = db.info.user_email.writable = False
 db.info.skills.requires = IS_NOT_EMPTY()
-db.info.available_times.readable = db.info.available_times.writable = False
+
 
 
 # after defining tables, uncomment below to enable auditing

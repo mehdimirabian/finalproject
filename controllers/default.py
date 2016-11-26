@@ -19,18 +19,8 @@ def get_user_name_from_email(email):
 
 @auth.requires_login()
 def index():
-    q = db.info  # This queries for all products.
-    form = SQLFORM.grid(
-        q,
-        editable=True,
-        create=True,
-        user_signature=True,
-        deletable=True,
-        fields=[db.info.skills, db.info.available_times,
-            ],
-        details=True,
-    )
-    return dict(form=form)
+    info = None
+    return dict(info=info)
 
 
 @auth.requires_login()
@@ -38,7 +28,23 @@ def edit():
     """
     This is the page to create / edit / delete a post.
     """
-    return dict()
+    q = db.info  # This queries for all products.
+    export_classes = dict(csv=False, json=False, html=False,
+                          tsv=False, xml=False, csv_with_hidden_cols=False,
+                          tsv_with_hidden_cols=False)
+    form = SQLFORM.grid(
+        q,
+        editable=True,
+        create=True,
+        user_signature=True,
+        deletable=True,
+        fields=[db.info.skills, db.info.available_times, db.info.image
+                ],
+        details=True,
+        upload=URL('download'),
+        exportclasses=export_classes
+    )
+    return dict(form=form)
 
 
 def user():

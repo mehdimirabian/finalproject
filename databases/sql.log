@@ -148,3 +148,6 @@ success!
 success!
 success!
 success!
+timestamp: 2016-11-25T18:24:42.920796
+ALTER TABLE info ADD image CHAR(512);
+success!
