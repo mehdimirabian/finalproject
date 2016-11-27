@@ -73,3 +73,32 @@ CREATE TABLE info(
     image CHAR(512)
 );
 success!
+timestamp: 2016-11-27T13:37:46.871531
+ALTER TABLE info ADD name TEXT;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

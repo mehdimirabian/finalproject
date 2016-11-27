@@ -6,4 +6,17 @@
         {{=form}}
     </div>
 
+    <script type="text/javascript">
+     $(document).ready(function() {
+     // if export class exist then append it inside search form
+       if($('.w2p_export_menu').length > 0) {
+         var export_link = $('.w2p_export_menu a').clone();
+         //rename button to Export to CSV
+         export_link.text('Export to CSV');
+         $(export_link).appendTo('.web2py_console form')
+         // remove web2py_export_menu
+         $('.w2p_export_menu').remove();
+     }
+     });
+    </script>
 {{pass}}
