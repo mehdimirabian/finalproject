@@ -1,4 +1,4 @@
-timestamp: 2016-11-17T19:45:37.005000
+timestamp: 2016-11-26T16:28:14.170000
 CREATE TABLE web2py_session_finalproject(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     locked CHAR(1),
@@ -9,7 +9,7 @@ CREATE TABLE web2py_session_finalproject(
     session_data BLOB
 );
 success!
-timestamp: 2016-11-17T19:45:37.132000
+timestamp: 2016-11-26T16:28:14.350000
 CREATE TABLE auth_user(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name CHAR(128),
@@ -21,21 +21,21 @@ CREATE TABLE auth_user(
     registration_id CHAR(512)
 );
 success!
-timestamp: 2016-11-17T19:45:37.221000
+timestamp: 2016-11-26T16:28:14.484000
 CREATE TABLE auth_group(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     role CHAR(512),
     description TEXT
 );
 success!
-timestamp: 2016-11-17T19:45:37.310000
+timestamp: 2016-11-26T16:28:14.582000
 CREATE TABLE auth_membership(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
 );
 success!
-timestamp: 2016-11-17T19:45:37.410000
+timestamp: 2016-11-26T16:28:14.685000
 CREATE TABLE auth_permission(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
@@ -44,7 +44,7 @@ CREATE TABLE auth_permission(
     record_id INTEGER
 );
 success!
-timestamp: 2016-11-17T19:45:37.508000
+timestamp: 2016-11-26T16:28:14.807000
 CREATE TABLE auth_event(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     time_stamp TIMESTAMP,
@@ -54,7 +54,7 @@ CREATE TABLE auth_event(
     description TEXT
 );
 success!
-timestamp: 2016-11-17T19:45:37.657000
+timestamp: 2016-11-26T16:28:14.894000
 CREATE TABLE auth_cas(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
@@ -64,90 +64,12 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
-timestamp: 2016-11-17T19:45:37.817000
+timestamp: 2016-11-26T16:28:14.989000
 CREATE TABLE info(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_email CHAR(512),
     skills TEXT,
-    available_times TEXT
+    available_times TEXT,
+    image CHAR(512)
 );
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-timestamp: 2016-11-25T18:24:42.920796
-ALTER TABLE info ADD image CHAR(512);
 success!

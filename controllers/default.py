@@ -38,12 +38,13 @@ def edit():
         create=True,
         user_signature=True,
         deletable=True,
-        fields=[db.info.skills, db.info.available_times, db.info.image
+        fields=[db.info.user_email, db.info.skills, db.info.available_times, db.info.image
                 ],
         details=True,
         upload=URL('download'),
         exportclasses=export_classes
     )
+
     return dict(form=form)
 
 
