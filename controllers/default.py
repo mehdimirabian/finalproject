@@ -22,7 +22,7 @@ def index():
     q = db.info  # This queries for all products.
     form = SQLFORM.grid(
         q,
-        editable=True,
+        editable = True,
         create=True,
         user_signature=True,
         deletable=True,
@@ -30,6 +30,7 @@ def index():
             ],
         details=True,
     )
+
     return dict(form=form)
 
 

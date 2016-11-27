@@ -18,7 +18,7 @@ db.define_table('info',
 # I don't want to display the user email by default in all forms.
 db.info.user_email.readable = db.info.user_email.writable = False
 db.info.skills.requires = IS_NOT_EMPTY()
-db.info.available_times.readable = db.info.available_times.writable = False
+
 
 
 # after defining tables, uncomment below to enable auditing
