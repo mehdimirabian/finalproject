@@ -19,19 +19,11 @@ def get_user_name_from_email(email):
 
 @auth.requires_login()
 def index():
-    info = None
-    return dict(info=info)
-
-
-@auth.requires_login()
-def edit():
-    """
-    This is the page to create / edit / delete a post.
-    """
     q = db.info  # This queries for all products.
     export_classes = dict(csv=False, json=False, html=False,
                           tsv=False, xml=False, csv_with_hidden_cols=False,
                           tsv_with_hidden_cols=False)
+
     form = SQLFORM.grid(
         q,
         editable=True,
@@ -44,8 +36,20 @@ def edit():
         upload=URL('download'),
         exportclasses=export_classes
     )
+    row = db().select(db.info.ALL)
+    if 'edit' in request.args:
+        if auth.user.email == row[0].user_email:
+            response.flash = T("emails are the same")
 
     return dict(form=form)
+
+
+@auth.requires_login()
+def edit():
+    """
+    This is the page to create / edit / delete a post.
+    """
+
 
 
 def user():

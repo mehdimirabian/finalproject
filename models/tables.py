@@ -24,6 +24,13 @@ db.info.user_email.writable = False
 
 
 
+
+
+
+
+
+
+
 db.info.skills.requires = IS_NOT_EMPTY()
 
 
