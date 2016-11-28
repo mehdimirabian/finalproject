@@ -17,25 +17,22 @@ def get_user_name_from_email(email):
     else:
         return ' '.join([u.first_name, u.last_name])
 
+def getEditDisplay(row):
+    edit_button =A('Edit', _class='button btn btn-default', _href=URL("default", "edit", args=[row.id]))
+    return edit_button
+
 @auth.requires_login()
 def index():
-    # info = None
-    # names = []
-    # if auth.user_id is not None:
-    #     info = db(db.info.user_email == auth.user.email).select(db.info.ALL)
-    #     for i in info:
-    #         names.append(get_user_name_from_email(info.user_email))
-    q = db.info  # This queries for all products.
+    q = db.info
     export_classes = dict(csv=False, json=False, html=False,
                           tsv=False, xml=False, csv_with_hidden_cols=False,
                           tsv_with_hidden_cols=False)
-    # links = [
-    #     lambda row: A('Edit', _class='button btn btn-default', _href=URL("default", "edit", args=[row.id]))]
+    links = [lambda row: getEditDisplay(row)]
     selectable = lambda ids: delete(ids)
     form = SQLFORM.grid(
         q,
         editable=False,
-        links=[lambda row: A('Edit', _class='button btn btn-default', _href=URL("default", "edit", args=[row.id]))],
+        links=links,
         create=True,
         selectable=selectable,
         user_signature=False,
@@ -65,13 +62,19 @@ def delete(ids):
 
 @auth.requires_login()
 def edit():
-    """
-    This is the page to create / edit / delete a post.
-    """
-    # edit_item = request.args(0) or redirect(URL('index'))
-    # form = crud.update(db.info, edit_item, next='index')
+    row = db().select(db.info.ALL)
     pizza = 'arsenal'
-    return dict(pizza = pizza)
+    print request.vars.skills
+    return dict(row = row)
+
+def submit():
+    print request.vars.skills
+    t_id = db(db.info.user_email == auth.user.email).update(
+        skills = request.vars.skills,
+        available_times = request.vars.available_times
+    )
+    t = db.info(request.vars.info_id)
+    return response.json(dict(info=t))
 
 
 def user():
