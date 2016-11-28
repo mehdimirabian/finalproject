@@ -35,6 +35,7 @@ def index():
     form = SQLFORM.grid(
         q,
         editable=False,
+        links=[lambda row: A('Edit', _class='button btn btn-default', _href=URL("default", "edit", args=[row.id]))],
         create=True,
         selectable=selectable,
         user_signature=False,
@@ -69,6 +70,8 @@ def edit():
     """
     # edit_item = request.args(0) or redirect(URL('index'))
     # form = crud.update(db.info, edit_item, next='index')
+    pizza = 'arsenal'
+    return dict(pizza = pizza)
 
 
 def user():
