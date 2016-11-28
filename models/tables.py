@@ -11,6 +11,8 @@
 
 db.define_table('info',
                 Field('user_email', default=auth.user.email if auth.user_id else None),
+                Field('first_name', requires=[IS_NOT_EMPTY(), IS_ALPHANUMERIC()]),
+                Field('last_name', requires=[IS_NOT_EMPTY(), IS_ALPHANUMERIC()]),
                 Field('skills', 'text'),
                 Field('available_times', 'text'),
                 Field('image', 'upload')
@@ -20,6 +22,8 @@ db.define_table('info',
 
 db.info.user_email.readable = True
 db.info.user_email.writable = False
+db.info.first_name.writable = True
+db.info.last_name.readable = False
 
 
 
