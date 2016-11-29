@@ -18,7 +18,14 @@ def get_user_name_from_email(email):
         return ' '.join([u.first_name, u.last_name])
 
 def getEditDisplay(row):
-    edit_button =A('Edit', _class='button btn btn-default', _href=URL("default", "edit", args=[row.id]))
+    database = db().select(db.info.ALL)
+   # my_email = database[row.id].user_email
+   # print my_email
+    edit_button = ''
+    print row.id
+    if database[row.id - 1].user_email == auth.user.email:
+        edit_button =A('Edit', _class='button btn btn-default', _href=URL("default", "edit", args=[row.id]))
+
     return edit_button
 
 @auth.requires_login()
@@ -64,11 +71,9 @@ def delete(ids):
 def edit():
     row = db().select(db.info.ALL)
     pizza = 'arsenal'
-    print request.vars.skills
     return dict(row = row)
 
 def submit():
-    print request.vars.skills
     t_id = db(db.info.user_email == auth.user.email).update(
         skills = request.vars.skills,
         available_times = request.vars.available_times
