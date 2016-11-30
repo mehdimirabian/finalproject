@@ -23,7 +23,7 @@ db.define_table('info',
 db.info.user_email.readable = True
 db.info.user_email.writable = False
 db.info.first_name.writable = True
-db.info.last_name.readable = False
+db.info.last_name.readable = True
 
 
 

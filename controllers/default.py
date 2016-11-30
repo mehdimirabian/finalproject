@@ -44,7 +44,7 @@ def index():
         selectable=selectable,
         user_signature=False,
         deletable=False,
-        fields=[db.info.first_name, db.info.last_name, db.info.user_email, db.info.skills, db.info.available_times,
+        fields=[db.info.user_email, db.info.skills, db.info.available_times,
                 ],
         details=True,
         exportclasses=export_classes
@@ -88,7 +88,7 @@ def edit():
     button_list = []
 
     button_list.append(A('Cancel', _class='btn btn-warning',
-                          _href=URL('default', 'edit', args=[cl.id])))
+                          _href=URL('default', 'index')))
 
     if form.process().accepted:
         # At this point, the record has already been inserted.
