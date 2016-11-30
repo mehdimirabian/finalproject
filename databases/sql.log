@@ -1,4 +1,4 @@
-timestamp: 2016-11-29T16:34:01.330000
+timestamp: 2016-11-29T20:45:07.352000
 CREATE TABLE web2py_session_finalproject(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     locked CHAR(1),
@@ -9,7 +9,7 @@ CREATE TABLE web2py_session_finalproject(
     session_data BLOB
 );
 success!
-timestamp: 2016-11-29T16:34:01.438000
+timestamp: 2016-11-29T20:45:07.470000
 CREATE TABLE auth_user(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name CHAR(128),
@@ -22,21 +22,21 @@ CREATE TABLE auth_user(
     image CHAR(512)
 );
 success!
-timestamp: 2016-11-29T16:34:01.545000
+timestamp: 2016-11-29T20:45:07.581000
 CREATE TABLE auth_group(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     role CHAR(512),
     description TEXT
 );
 success!
-timestamp: 2016-11-29T16:34:01.713000
+timestamp: 2016-11-29T20:45:07.676000
 CREATE TABLE auth_membership(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
 );
 success!
-timestamp: 2016-11-29T16:34:01.831000
+timestamp: 2016-11-29T20:45:07.786000
 CREATE TABLE auth_permission(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
@@ -45,7 +45,7 @@ CREATE TABLE auth_permission(
     record_id INTEGER
 );
 success!
-timestamp: 2016-11-29T16:34:01.942000
+timestamp: 2016-11-29T20:45:07.885000
 CREATE TABLE auth_event(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     time_stamp TIMESTAMP,
@@ -55,7 +55,7 @@ CREATE TABLE auth_event(
     description TEXT
 );
 success!
-timestamp: 2016-11-29T16:34:02.066000
+timestamp: 2016-11-29T20:45:07.973000
 CREATE TABLE auth_cas(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
@@ -65,7 +65,7 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
-timestamp: 2016-11-29T16:34:02.186000
+timestamp: 2016-11-29T20:45:08.290000
 CREATE TABLE info(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_email CHAR(512),
@@ -75,4 +75,14 @@ CREATE TABLE info(
     available_times TEXT,
     image CHAR(512)
 );
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
 success!
