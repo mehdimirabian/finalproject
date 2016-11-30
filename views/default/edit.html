@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <textarea>{{=row[0].skills}}</textarea>
-    <button type="button" onclick="myFunction()">submit!</button>
+{{extend 'layout.html'}}
 
+<div class="mycontent">
 
-</head>
-<body>
+    <div class="button_list">
+    {{for b in button_list:}}
+        <div class="top_button">{{=b}}</div>
+    {{pass}}
+    </div>
+    {{=form}}
 
-</body>
-</html>
+</div>
