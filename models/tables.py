@@ -11,20 +11,21 @@
 
 db.define_table('info',
                 Field('user_email', default=auth.user.email if auth.user_id else None),
-                Field('first_name', requires=[IS_NOT_EMPTY(), IS_ALPHANUMERIC()]),
-                Field('last_name', requires=[IS_NOT_EMPTY(), IS_ALPHANUMERIC()]),
+                Field('first_name', default=auth.user.first_name if auth.user_id else None, requires=[IS_NOT_EMPTY(), IS_ALPHANUMERIC()]),
+                Field('last_name', default=auth.user.last_name if auth.user_id else None, requires=[IS_NOT_EMPTY(), IS_ALPHANUMERIC()]),
                 Field('skills', 'text'),
                 Field('available_times', 'text'),
-                Field('image', 'upload')
+                Field('image', default=auth.user.image if auth.user_id else None)
                 )
 
 # I don't want to display the user email by default in all forms.
 
-db.info.user_email.readable = True
+db.info.user_email.readable = False
 db.info.user_email.writable = False
-db.info.first_name.writable = True
-db.info.last_name.readable = False
-
+db.info.first_name.writable = False
+db.info.last_name.writable = False
+db.info.image.writable = False
+db.info.image.readable = False
 
 
 

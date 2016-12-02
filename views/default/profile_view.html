@@ -1,11 +1,11 @@
 {{extend 'layout.html'}}
-
+{{if profile:}}
 <h2>{{=profile.first_name + " " + profile.last_name}}'s Profile</h2>
-
-<img src = {{=URL('default', 'download', args=[profile.image])}}>
+<img style="max-height: 350px; max-width: 350px;"src = {{=URL('default', 'download', args=[profile.image])}}>
 {{if table is not None:}}
-    <h4>{{=table.skills}}</h4>
-    <h4>{{=table.available_times}}</h4>
+    <h4>{{=profile.skills}}</h4>
+    <h4>{{=profile.available_times}}</h4>
 {{else:}}
         <h5>Access denied</h5>
 {{pass}}
+        {{pass}}
