@@ -9,13 +9,13 @@
 # -------------------------------------------------------------------------
 
 def get_user_name_from_email(email):
-	"""Returns a string corresponding to the user first and last names,
+    """Returns a string corresponding to the user first and last names,
     given the user email."""
-	u = db(db.auth_user.email == email).select().first()
-	if u is None:
-		return 'None'
-	else:
-		return ' '.join([u.first_name, u.last_name])
+    u = db(db.auth_user.email == email).select().first()
+    if u is None:
+        return 'None'
+    else:
+        return ' '.join([u.first_name, u.last_name])
 
 def getEditDisplay(row):
     database = db().select(db.info.ALL)
@@ -34,12 +34,12 @@ def others():
     export_classes = dict(csv=False, json=False, html=False,
                           tsv=False, xml=False, csv_with_hidden_cols=False,
                           tsv_with_hidden_cols=False)
-    links = [lambda row: A('View Profile', _href=URL("default", "profile_view", args=[row.id])), 
-			 lambda row: getEditDisplay(row)]
+    links = [lambda row: A('View Profile', _class='button btn btn-primary', _href=URL("default", "profile_view", args=[row.id])),
+             lambda row: getEditDisplay(row)]
     # selectable = lambda ids: delete(ids)
     form = SQLFORM.grid(
         q,
-        editable=True,
+        editable=False,
         create=True,
         # selectable=selectable,
         user_signature=False,
@@ -67,10 +67,11 @@ def index():
     print table
     print profile
     return dict(profile=profile, table=table)
+
 @auth.requires_login()
 def delete(ids):
-	to_delete = db(db.info.id.belongs(ids))
-	to_delete.delete()
+    to_delete = db(db.info.id.belongs(ids))
+    to_delete.delete()
 
 
 # @auth.requires_login()
@@ -98,7 +99,7 @@ def edit():
         cl = db(q).select().first()
         if cl is None:
             session.flash = T('Not Authorized')
-            redirect(URL('default', 'index'))
+            redirect(URL('default', 'others'))
         # Always write invariants in your code.
         # Here, the invariant is that the checklist is known to exist.
         form = SQLFORM(db.info, record=cl, deletable=True, readonly=False)
@@ -107,12 +108,12 @@ def edit():
     button_list = []
 
     button_list.append(A('Cancel', _class='btn btn-warning',
-                          _href=URL('default', 'index')))
+                          _href=URL('default', 'others')))
 
     if form.process().accepted:
         # At this point, the record has already been inserted.
         session.flash = T('Checklist edited.')
-        redirect(URL('default', 'index'))
+        redirect(URL('default', 'others'))
     elif form.errors:
         session.flash = T('Please enter correct values.')
     return dict(form=form, button_list=button_list)
@@ -140,7 +141,7 @@ def profile_view():
 
 
 def user():
-	"""
+    """
     exposes:
     http://..../[app]/default/user/login
     http://..../[app]/default/user/logout
@@ -155,28 +156,28 @@ def user():
     to decorate functions that need access control
     also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
     """
-	if request.args(0) == 'profile':
-		db.auth_user.first_name.writable = db.auth_user.last_name.writable = db.auth_user.email.writable = False
-		for field in auth.settings.extra_fields['auth_user']:
-			field.readable = True
-			field.writable = False
-	return dict(form=auth())
+    if request.args(0) == 'profile':
+        db.auth_user.first_name.writable = db.auth_user.last_name.writable = db.auth_user.email.writable = False
+        for field in auth.settings.extra_fields['auth_user']:
+            field.readable = True
+            field.writable = False
+    return dict(form=auth())
 
 
 @cache.action()
 def download():
-	"""
+    """
     allows downloading of uploaded files
     http://..../[app]/default/download/[filename]
     """
-	return response.download(request, db)
+    return response.download(request, db)
 
 
 def call():
-	"""
+    """
     exposes services. for example:
     http://..../[app]/default/call/jsonrpc
     decorate with @services.jsonrpc the functions to expose
     supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
     """
-	return service()
+    return service()
