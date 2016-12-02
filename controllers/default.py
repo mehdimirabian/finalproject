@@ -67,19 +67,57 @@ def delete(ids):
 	to_delete.delete()
 
 
+# @auth.requires_login()
+# def edit():
+# 	"""
+#     This is the page to create / edit / delete a post.
+#     """
+# 	user_id = request.args(0) or redirect(URL('index'))
+# 	form = SQLFORM(db.auth_user, user_id).process()
+# 	membership_panel = LOAD(request.controller,
+# 							'edit.html',
+# 							args=[user_id],
+# 							ajax=True)
+# 	return dict(form=form, membership_panel=membership_panel)
+
 @auth.requires_login()
 def edit():
-	"""
-    This is the page to create / edit / delete a post.
-    """
-	user_id = request.args(0) or redirect(URL('index'))
-	form = SQLFORM(db.auth_user, user_id).process()
-	membership_panel = LOAD(request.controller,
-							'edit.html',
-							args=[user_id],
-							ajax=True)
-	return dict(form=form, membership_panel=membership_panel)
+    if request.args(0) is None:
+        form = SQLFORM(db.info)
+    else:
+        # A checklist is specified.  We need to check that it exists, and that the user is the author.
+        # We use .first() to get either the first element or None, rather than an iterator.
+        q = ((db.info.user_email == auth.user.email) &
+             (db.info.id == request.args(0)))
+        cl = db(q).select().first()
+        if cl is None:
+            session.flash = T('Not Authorized')
+            redirect(URL('default', 'index'))
+        # Always write invariants in your code.
+        # Here, the invariant is that the checklist is known to exist.
+        form = SQLFORM(db.info, record=cl, deletable=True, readonly=False)
 
+    # Adds some buttons.  Yes, this is essentially glorified GOTO logic.
+    button_list = []
+
+    button_list.append(A('Cancel', _class='btn btn-warning',
+                          _href=URL('default', 'index')))
+
+    if form.process().accepted:
+        # At this point, the record has already been inserted.
+        session.flash = T('Checklist edited.')
+        redirect(URL('default', 'index'))
+    elif form.errors:
+        session.flash = T('Please enter correct values.')
+    return dict(form=form, button_list=button_list)
+
+def submit():
+    t_id = db(db.info.user_email == auth.user.email).update(
+        skills = request.vars.skills,
+        available_times = request.vars.available_times
+    )
+    t = db.info(request.vars.info_id)
+    return response.json(dict(info=t))
 
 # edit_item = request.args(0) or redirect(URL('index'))
 # form = crud.update(db.info, edit_item, next='index')
