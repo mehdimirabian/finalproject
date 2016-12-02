@@ -3,9 +3,12 @@
 {{if auth.user_id:}}
 
 
+    <h4>Here you can view profiles of Codoro members and connect with them!</h4>
     <div>
         {{=form}}
     </div>
+
+    <a href="{{=URL('default', 'index')}}" class="btn btn-success"> Return to Your Profile</a>
 
     <script type="text/javascript">
      $(document).ready(function() {
