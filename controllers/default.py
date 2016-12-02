@@ -34,7 +34,8 @@ def others():
     export_classes = dict(csv=False, json=False, html=False,
                           tsv=False, xml=False, csv_with_hidden_cols=False,
                           tsv_with_hidden_cols=False)
-    links = [lambda row: A('View Profile', _href=URL("default", "profile_view", args=[row.id]))]
+    links = [lambda row: A('View Profile', _href=URL("default", "profile_view", args=[row.id])), 
+			 lambda row: getEditDisplay(row)]
     # selectable = lambda ids: delete(ids)
     form = SQLFORM.grid(
         q,
