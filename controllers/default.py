@@ -19,7 +19,7 @@ def get_user_name_from_email(email):
 
 def getEditDisplay(row):
     database = db().select(db.info.ALL)
-    edit_button =A('Edit', _class='button btn btn-default', _href=URL("default", "edit", args=[row.id]))
+    edit_button =A('Edit', _class='button btn btn-warning', _href=URL("default", "edit", args=[row.id]))
     return edit_button
 
 @auth.requires_login()
