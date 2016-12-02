@@ -17,6 +17,11 @@ def get_user_name_from_email(email):
 	else:
 		return ' '.join([u.first_name, u.last_name])
 
+def getEditDisplay(row):
+    database = db().select(db.info.ALL)
+    edit_button =A('Edit', _class='button btn btn-default', _href=URL("default", "edit", args=[row.id]))
+    return edit_button
+
 @auth.requires_login()
 def others():
     # info = None
