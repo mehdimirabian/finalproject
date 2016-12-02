@@ -5,12 +5,12 @@
     </div>
 
 {{if profile is None:}}
-        <h2>It seems you haven't made a profile yet! Why don't you create one?</h2>
-        <h4>Navigate to the "See Other Users" link. Click the Add Record button on the upper left hand side. And Voila! Welcome
-        to the Codoro community!</h4>
+        <h2>You don't have a profile! Why don't you create one?</h2>
+        <h4>Navigate to the "See Other Users" link. Click the Add Record button on the upper left hand side.</h4>
 {{else:}}
-    <h2>{{=profile.first_name + " " + profile.last_name}}'s Profile</h2>
 <img style="max-height: 350px; max-width: 350px;"src = {{=URL('default', 'download', args=[profile.image])}}>
+<h2>{{=profile.first_name + " " + profile.last_name}}'s Profile</h2>
+
 {{if table is not None:}}
     <h4>{{=profile.skills}}</h4>
     <h4>{{=profile.available_times}}</h4>
