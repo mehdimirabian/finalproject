@@ -28,8 +28,14 @@ def index():
     export_classes = dict(csv=False, json=False, html=False,
                           tsv=False, xml=False, csv_with_hidden_cols=False,
                           tsv_with_hidden_cols=False)
+<<<<<<< Updated upstream
     links = [lambda row: getEditDisplay(row)]
     selectable = lambda ids: delete(ids)
+=======
+    links = [lambda row: A('View Profile', _href=URL("default", "profile_view", args=[row.id])),
+			 lambda row: getEditDisplay(row)]
+    # selectable = lambda ids: delete(ids)
+>>>>>>> Stashed changes
     form = SQLFORM.grid(
         q,
         editable=False,
