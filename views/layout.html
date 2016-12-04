@@ -1,6 +1,45 @@
 <!DOCTYPE html>
+<script src="jquery.js"></script>
+<script src="sugar.min.js"></script>
+<script src="widgets.min.js"></script>
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{=T.accepted_language or 'en'}}"> <!--<![endif]-->
-  <head>
+ <head>
+<header class="black ">
+<div class="container max900">
+  <div class="fill middle">
+    <label class="ham fa fa-bars" for="left-menu"></label>
+    <div class="burger accordion">
+      <input id="left-menu" type="checkbox">
+      <ul class="menu">
+        <li>
+          <a href="others.html"><strong>Home</strong></a>
+        </li>
+        <li><a class="black">Skills</a>
+
+        </li>
+        <li><a class="black">About</a>
+        </li>
+      </ul>
+      <ul class="menu right">
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="#" rel="nofollow">Welcome Katy</a>
+          <ul>
+            <li><a href="index.html">My profile</a></li>
+            <li><a>Log out</a></li>
+
+          </ul>
+        </li>
+        <li style="width:100px"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container max900">
+  <div class="fill middle">
+    <input class="fill rounded" placeholder="🔎 search here">
+  </div>
+</div>
+    </header>
+
     <meta charset="utf-8">
     <!-- www.phpied.com/conditional-comments-block-downloads/ -->
     <!-- Always force latest IE rendering engine
@@ -23,6 +62,8 @@
     <link rel="stylesheet" href="{{=URL('static','css/bootstrap.min.css')}}"/>
     <link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap3.css')}}"/>
     <link rel="stylesheet" href="{{=URL('static','css/myapp.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/stupid.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/custom.css')}}"/>
     <link rel="stylesheet" href="{{=URL('static', 'font-awesome-4.6.3/css/font-awesome.min.css')}}"/>
 
     <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
@@ -47,37 +88,24 @@
     (left_sidebar_enabled and 1 or 0)+(right_sidebar_enabled and 1 or 0)]
     }}
   </head>
+
   <body>
+  <div class="fill center" style="height:240px;padding-top:5px">
+             <h1>Welcome to Codoro</h1>
+
+  </div>
     <!--[if lt IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
     <div class="w2p_flash alert alert-dismissable">{{=response.flash or ''}}</div>
     <!-- Navbar ======================================= -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          {{=response.logo or ''}}
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            {{='auth' in globals() and auth.navbar('Welcome',mode='dropdown') or ''}}
-          </ul>
-          {{if response.menu:}}
-          {{=MENU(response.menu, _class='nav navbar-nav',li_class='dropdown',ul_class='dropdown-menu')}}
-          {{pass}}
-        </div>
-      </div>
-    </nav>
+
+
     <!-- Masthead ===================================== -->
     {{block header}}
     {{end}}
     <!-- Main ========================================= -->
     <!-- Begin page content -->
-    <div class="container-fluid main-container">
+    <div class="container-fluid main-container" >
+
       {{if left_sidebar_enabled:}}
         <div class="col-md-3 left-sidebar">
             {{block left_sidebar}}
@@ -109,8 +137,9 @@
       <div class="container-fluid">
         <div class="copyright pull-left">{{=T('Copyright')}} &#169; {{=request.now.year}}</div>
           <div id="poweredBy" class="pull-right">
-            {{=T('Powered by')}}
-            <a href="http://www.web2py.com/">web2py</a>
+            {{=T('Final Project')}}
+            <a href="https://sites.google.com/a/ucsc.edu/luca/classes/cmps-183-hypermedia-and-the-web/cmps-183-fall-2016">CMPS 183 UCSC</a>
+
           </div>
       </div>
     </footer>
