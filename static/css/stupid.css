@@ -13,7 +13,7 @@ p, li {margin-bottom:0.5em}
 p {text-align:justify}
 label, strong {font-weight:bold}
 ul {list-style-type:none; padding-left:20px}
-a {text-decoration:none; color: #e6040f; white-space:nowrap}
+a {text-decoration:none; color: rgba(5, 5, 5, 0.86); white-space:nowrap}
 a:hover {cursor:pointer}
 h1,h2,h3,h4,h5,h6{font-weight:bold}
 h1{font-size:4em; margin:1.0em 0 0.25em 0}
@@ -40,8 +40,9 @@ header, main, footer {display:block; with:100%} /* IE fix */
 }
 
 /*** buttons ***/
-.btn, button, [type=button], [type=submit] {padding:0.5em 1em; margin:0 0.5em 0.5em 0; display:inline-block; background-color: #ff6c00; color:white}
-.btn:hover, button:hover, [type=button]:hover, [type=submit]:hover {box-shadow:0 0 10px #666; text-decoration:none; cursor:pointer}
+.btn, button, [type=button], [type=submit] {padding:0.5em 1em; margin:0 0.5em 0.5em 0; display:inline-block; background-color: #f9edbe; color: rgba(5, 5, 5, 0.85)
+}
+.btn:hover, button:hover, [type=button]:hover, [type=submit]:hover {box-shadow:0 0 10px rgba(155, 155, 155, 0.85); text-decoration:none; cursor:pointer}
 .btn.small, table .btn {padding:0.25em 0.5em; font-size:0.8em}
 .btn.large {padding:1em 2em; font-size:1.2em}
 .oval {border-radius:50%}
@@ -58,7 +59,8 @@ header, main, footer {display:block; with:100%} /* IE fix */
 .yscroll {overflow-y:scroll !important}
 .nowrap {white-space:nowrap; overflow-x:hidden}
 .fill {width:100%}
-.lifted {box-shadow:5px 5px 10px #666}
+.lifted {box-shadow:5px 5px 10px rgba(155, 155, 155, 0.85)
+}
 .relative {position:relative}
 .relative>div {position:absolute}
 .spaced {margin-bottom:20px; margin-top:20px}
@@ -112,7 +114,7 @@ input:invalid, input.error, textarea:invalid, textarea.error {background: #ffdfd
   position:relative;
   height:8px;
   display:block;
-  background-color:#acece6;
+  background-color: #fafdff;
   background-clip:padding-box;
   overflow:hidden;
 }
@@ -121,11 +123,11 @@ input:invalid, input.error, textarea:invalid, textarea.error {background: #ffdfd
   background-color:inherit;
   top:0;
   bottom:0;
-  background-color:#26a69a;
+  background-color: rgba(5, 15, 10, 0.51);
   transition:width .3s linear;
 }
 .progress .indeterminate {
-  background-color:#26a69a;
+  background-color: rgba(5, 15, 10, 0.51);
 }
 .progress .indeterminate:before {
   content:'';
@@ -226,7 +228,7 @@ input:invalid, input.error, textarea:invalid, textarea.error {background: #ffdfd
 /*** pulsating ring from https://jsfiddle.net/mandynicole/7xrKP/ *******/
 .pulse:after {
     content:"";
-    border:3px solid #00e6ac;
+    border:3px solid rgba(0, 255, 192, 0);
     -webkit-border-radius:30px;
     height:40px;
     width:40px;
@@ -245,7 +247,8 @@ input:invalid, input.error, textarea:invalid, textarea.error {background: #ffdfd
 
 /**** underline effect ***/
 a:not(.btn):not(.noeffect) {position:relative}
-a:not(.btn):not(.noeffect):hover {color:#26a69a}
+a:not(.btn):not(.noeffect):hover {color: #e6040f
+}
 a:not(.btn):not(.noeffect):hover:after {width:100%}
 a:not(.btn):not(.noeffect):after {
   display:block;
@@ -267,7 +270,7 @@ a:not(.btn):not(.noeffect):after {
   bottom:0;
   left:0;
   right:0;
-  background-color:rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0);
   padding-top:20vh;
   transition:opacity 500ms;
   visibility:hidden;
@@ -360,7 +363,7 @@ a:not(.btn):not(.noeffect):after {
   padding: 4px 9px;
   white-space: nowrap;
   color: white;
-  background-color: #26a69a;
+  background-color: #e6040f;
   border-radius: 5px;
   font-size:12px;
   margin: 2px 5px 2px 0;
@@ -369,7 +372,8 @@ a:not(.btn):not(.noeffect):after {
 .tags.dismissible > span:hover {opacity: 0.5}
 .tags.dismissible > span:not(.off):after {content:" âœ•"}
 .tags > span.off {background-color: #ccc}
-.tags.dismissible > span.off:hover {background-color:#26a69a}
+.tags.dismissible > span.off:hover {background-color: #e6040f
+}
 
 /*** colors from http://clrs.cc/ ***/
 .navy{background-color:#001f3f;color:white}.blue{background-color:#0074d9;color:white}.aqua{background-color:#7fdbff;color:#111111}.teal{background-color:#39cccc;color:white}.olive{background-color:#3d9970;color:white}.green{background-color:#2ecc40;color:white}.aquamarine{background-color:#26a69a;color:white}.lime{background-color:#01ff70;color:#111111}.yellow{background-color:#ffdc00;color:#111111}.orange{background-color:#ff851b;color:white}.red{background-color:#cc1f00;color:white}.fuchsia{background-color:#f012be;color:white}.pink{background-color:#ee6e73;color:white}.purple{background-color:#b10dc9;color:white}.maroon{background-color:#85144b;color:white}.white{background-color:#fff;color:#111111;-webkit-box-shadow:inset 0px 0px 0px 1px #ddd;-moz-box-shadow:inset 0px 0px 0px 1px #ddd;box-shadow:inset 0px 0px 0px 1px #ddd}.gray{background-color:#aaa;color:white}.silver{background-color:#f1f1f1;color:#111111}.black{background-color:#111111;text-decoration-color: whitesmoke}.glass{background:rgba(255,255,255,0.5);color:#111111}

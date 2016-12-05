@@ -14,26 +14,24 @@
 </head>
 
 
-<body class="black">
+<body class="white">
     {{if response.flash:}}
     <div class="w2p_flash">
         {{=response.flash}}
     </div>
     {{pass}}
-<header class="black padded">
+
+<header class="padded" style="background-color: #f9edbe">
 <div class="container middle max800">
   <div class="fill middle">
     <label class="ham padded fa fa-bars" for="left-menu"></label>
     <div class="burger accordion">
       <input id="left-menu" type="checkbox">
       <ul class="menu">
-        <li><a href="{{=URL('default','index')}}" class="black"><i class="fa  fa-home"></i><strong> Home</strong></a>
+        <li><a href="{{=URL('default','index')}}"><i class="fa  fa-home"></i><strong> Home</strong></a>
         </li>
 
-
-        <li><a href="{{=URL('default','my_profile')}}" class="black">My Profile</a>
-
-
+        <li><a href="{{=URL('default','my_profile')}}">My Profile</a>
 
         <!-- This tab doesn't do anything yet
         <li><a class="black">Courses</a>
@@ -44,10 +42,11 @@
         </li> -->
 
 
-        <a href="{{=URL('default', 'others')}}" class="black">Members</a>
+        <a href="{{=URL('default', 'others')}}">Members</a>
         </li>
 
-        <!--<li><a href="#about" class="black">About</a>
+        <!-- No need for this anymore
+        <li><a href="#about" class="black">About</a>
 
         <div class="modal" id="about">
             <div class="twothirds rounded white padded">
@@ -65,10 +64,11 @@
         </li>
       </ul>
       <ul class="menu right">
-        <li><a class="black">{{=auth.navbar(mode='dropdown')}}</a>
+        <li>{{=auth.navbar(mode='dropdown')}}</li>
 
-        </li>
+        <!--</li>
         <li style="width:100px"></li>
+        --->
       </ul>
     </div>
   </div>
@@ -105,11 +105,11 @@
 
 
      <!-- this is default footer -->
-    <footer class="black">
+    <footer class="white">
         <div class="silver center padded social">
-        <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u={url}"></a>
-        <a class="fa fa-twitter" href="https://twitter.com/home?status={url}"></a>
-        <a class="fa fa-google" href="https://plus.google.com/share?url={url}"></a>
+        <a class="fa fa-facebook" style="color: orangered" href="https://www.facebook.com/sharer/sharer.php?u={url}"></a>
+        <a class="fa fa-twitter" style="color: orangered" href="https://twitter.com/home?status={url}"></a>
+        <a class="fa fa-google" style="color: orangered" href="https://plus.google.com/share?url={url}"></a>
       </div>
       <div class="container padded max900">
         <div class="copyright pull-left">{{=T('Copyright')}} &#169; {{=request.now.year}}</div>

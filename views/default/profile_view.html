@@ -7,7 +7,7 @@
 <br>
 <div class="fill center">
     {{if profile:}}
-    <center><h3>{{=profile.first_name + " " + profile.last_name}}</h3></center>
+    <center><h2>{{=profile.first_name + " " + profile.last_name}}</h2></center>
     <center><img style="max-height: 350px; max-width: 350px;"src = {{=URL('default', 'download', args=[profile.image])}}></center>
 
     {{if table is not None:}}
