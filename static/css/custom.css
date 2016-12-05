@@ -5,11 +5,13 @@ a:not(.btn):not(.noeffect):hover {color: #dd362a
 a:not(.btn):not(.noeffect):after {background-color: #26a69a
 }
 .btn, button, [type=button], [type=submit] {background-color: #991523; color:white}
-.progress .determinate {background-color:#26a69a}
+.progress .determinate {background-color: #ffffff
+}
 .progress .indeterminate {background-color:#26a69a}
 .tags > span {background-color: #a62433
 }
-.tags.dismissible > span.off:hover {background-color:#26a69a}
+.tags.dismissible > span.off:hover {background-color: #dd362a
+}
 .background {
     background: url(../images/Tomighty.png) no-repeat center center;
 }

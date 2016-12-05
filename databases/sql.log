@@ -76,6 +76,28 @@ CREATE TABLE info(
     image CHAR(512)
 );
 success!
+timestamp: 2016-12-05T01:55:48.671097
+ALTER TABLE auth_user ADD skills TEXT;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-12-05T01:59:08.839595
+ALTER TABLE auth_user ADD profile_photo CHAR(512);
+success!
+success!
+success!
+success!
+success!
 success!
 success!
 success!

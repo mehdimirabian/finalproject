@@ -1,18 +1,30 @@
 {{extend 'layout.html'}}
 
 
-{{if auth.user_id:}}
+
 
     <h4>Connect with Codoro!</h4>
-        <a style="float: right" class="btn rounded green" href={{=URL('default', 'index')}}>Go to Your Profile <i class="fa fa-eye fa-lg"></i></a>
-    <div>
 
-        {{=form}}
-    </div>
+
+
+
+
+
+
+
+
+{{=form}}
+
+
+
+
+
+
 
 
 
     <script type="text/javascript">
+
      $(document).ready(function() {
      // if export class exist then append it inside search form
        if($('.w2p_export_menu').length > 0) {

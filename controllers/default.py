@@ -48,6 +48,7 @@ def others():
                 ],
         details=False,
         links=links,
+
         exportclasses=export_classes
     )
     # my_extra_element = TR(LABEL("Don't view"),
@@ -98,6 +99,7 @@ def edit():
              (db.info.id == request.args(0)))
         cl = db(q).select().first()
         if cl is None:
+
             session.flash = T('Not Authorized')
             redirect(URL('default', 'others'))
         # Always write invariants in your code.
@@ -158,9 +160,10 @@ def user():
     """
     if request.args(0) == 'profile':
         db.auth_user.first_name.writable = db.auth_user.last_name.writable = db.auth_user.email.writable = False
+
         for field in auth.settings.extra_fields['auth_user']:
             field.readable = True
-            field.writable = False
+            field.writable = True
     return dict(form=auth())
 
 

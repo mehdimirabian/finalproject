@@ -25,8 +25,8 @@ db.info.id.readable = False
 db.info.user_email.writable = False
 db.info.first_name.writable = False
 db.info.last_name.writable = False
-db.info.image.writable = False
-db.info.image.readable = False
+db.info.image.writable = True
+db.info.image.readable = True
 
 
 

@@ -19,7 +19,7 @@
     </div>
     {{pass}}
 <header class="black padded">
-<div class="container middle max800">
+<div class="container middle max900">
   <div class="fill middle">
     <label class="ham padded fa fa-bars" for="left-menu"></label>
     <div class="burger accordion">
@@ -70,7 +70,7 @@
 </div>
 <div class="container max900">
   <div class="fill middle">
-    <input class="fill rounded" placeholder="🔎 search here">
+
   </div>
 </div>
     </header>
@@ -86,29 +86,32 @@
     <!-- Main ========================================= -->
     <!-- Begin page content -->
 
-    <main class="white" style="height:500px;>
-        <div class="fill center" style="height:500px;">
+    <main class="background white" style="height:505px;background:image(beige);background-position:center center;padding-top:5px">
+
+
       {{include}}
-            </div>
+
+
     </main>
 
 
 
 
      <!-- this is default footer -->
-    <footer class="black">
+    <footer class="silver" >
         <div class="silver center padded social">
         <a class="fa fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u={url}"></a>
         <a class="fa fa-twitter" href="https://twitter.com/home?status={url}"></a>
         <a class="fa fa-google" href="https://plus.google.com/share?url={url}"></a>
       </div>
       <div class="container padded max900">
-        <div style="color: white" class="copyright pull-left">{{=T('Copyright')}} &#169; {{=request.now.year}}</div>
-          <div style="color: white" id="poweredBy" class="pull-right">
+        <div class="fill">{{=T('Copyright')}} &#169; {{=request.now.year}}
+          <div id="poweredBy" class="pull-right silver">
             {{=T('Final Project')}}
             <a href="https://sites.google.com/a/ucsc.edu/luca/classes/cmps-183-hypermedia-and-the-web/cmps-183-fall-2016">CMPS 183 UCSC</a>
 
           </div>
+            </div>
       </div>
     </footer>
   </body>

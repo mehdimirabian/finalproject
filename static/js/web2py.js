@@ -189,7 +189,7 @@
                     if (!web2py.confirm(confirm_message)) this.checked = false;
             });
             var datetime_format = !web2py.isUndefined(w2p_ajax_datetime_format) ? w2p_ajax_datetime_format :
-                '%Y-%m-%d %H:%M:%S';
+                '%Y-%m-%d %H:%M';
             doc.on('click', 'input.datetime', function () {
                 var tformat = $(this).data('w2p_datetime_format');
                 var active = $(this).data('w2p_datetime');
