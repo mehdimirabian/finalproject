@@ -7,13 +7,13 @@
 <div class="text-left">
     {{if profile:}}
     <br>
-    <h3><center>{{=profile.first_name + " " + profile.last_name}}</h3></center>
-    <img style="max-height: 350px; max-width: 350px;"src = {{=URL('default', 'download', args=[profile.image])}}>
+    <h3><center>{{=profile.first_name + " " + profile.last_name}}'s Profile</h3></center>
+    <center><img style="max-height: 350px; max-width: 350px;"src = {{=URL('default', 'download', args=[profile.image])}}></center>
 
     {{if table is not None:}}
-        <h5>Skill(s): {{=profile.skills}}</h5>
-        <h5>Availability: {{=profile.available_times}}</h5>
-        <h6>E-mail: {{=profile.user_email}}</h6>
+        <h5><center>Skill(s): {{=profile.skills}}</center></h5>
+        <h5><center>Availability: {{=profile.available_times}}</center></h5>
+        <h6><center>E-mail: {{=profile.user_email}}</center></h6>
     {{else:}}
         <h5>Uh-oh! This person doesn't have a profile yet. :/</h5>
     {{pass}}
