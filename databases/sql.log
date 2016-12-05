@@ -191,3 +191,25 @@ success!
 success!
 success!
 success!
+timestamp: 2016-12-05T12:38:24.471617
+CREATE TABLE web2py_session_finalproject4(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    locked CHAR(1),
+    client_ip CHAR(64),
+    created_datetime TIMESTAMP,
+    modified_datetime TIMESTAMP,
+    unique_key CHAR(64),
+    session_data BLOB
+);
+success!
+timestamp: 2016-12-05T12:38:24.481004
+CREATE TABLE info(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_email CHAR(512),
+    first_name CHAR(512),
+    last_name CHAR(512),
+    skills TEXT,
+    available_times TEXT,
+    image CHAR(512)
+);
+success!

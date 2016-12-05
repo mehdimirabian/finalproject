@@ -71,11 +71,11 @@ def my_profile():
     print profile
     return dict(profile=profile, table=table)
 
+
 @auth.requires_login()
 def delete(ids):
     to_delete = db(db.info.id.belongs(ids))
     to_delete.delete()
-
 
 # @auth.requires_login()
 # def edit():
@@ -121,6 +121,7 @@ def edit():
         session.flash = T('Please enter correct values.')
     return dict(form=form, button_list=button_list)
 
+
 def submit():
     t_id = db(db.info.user_email == auth.user.email).update(
         skills = request.vars.skills,
@@ -131,7 +132,7 @@ def submit():
 
 # edit_item = request.args(0) or redirect(URL('index'))
 # form = crud.update(db.info, edit_item, next='index')
-#
+
 def profile_view():
     print request.args[0]
     #profile = db(db.auth_user.id==request.args[0]).select(db.auth_user.id, db.auth_user.first_name, db.auth_user.last_name, db.auth_user.image).first()
@@ -140,7 +141,6 @@ def profile_view():
     print profile
     print table
     return dict(profile=profile, table=table)
-
 
 
 def user():

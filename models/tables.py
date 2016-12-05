@@ -8,7 +8,6 @@
 # Consult manual for more options, validators, etc.
 
 
-
 db.define_table('info',
                 Field('user_email', default=auth.user.email if auth.user_id else None),
                 Field('first_name', default=auth.user.first_name if auth.user_id else None, requires=[IS_NOT_EMPTY(), IS_ALPHANUMERIC()]),
@@ -27,18 +26,7 @@ db.info.first_name.writable = False
 db.info.last_name.writable = False
 db.info.image.writable = False
 db.info.image.readable = False
-
-
-
-
-
-
-
-
-
-
 db.info.skills.requires = IS_NOT_EMPTY()
-
 
 
 # after defining tables, uncomment below to enable auditing
