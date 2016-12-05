@@ -1,12 +1,15 @@
 a {color: rgba(221, 41, 33, 0.43)
 }
-a:not(.btn):not(.noeffect):hover {color:#26a69a}
-a:not(.btn):not(.noeffect):after {background-color:#26a69a}
+a:not(.btn):not(.noeffect):hover {color: #dd362a
+}
+a:not(.btn):not(.noeffect):after {background-color: #26a69a
+}
 .btn, button, [type=button], [type=submit] {background-color: #991523; color:white}
 .progress .determinate {background-color:#26a69a}
 .progress .indeterminate {background-color:#26a69a}
-.tags > span {background-color: #26a69a}
+.tags > span {background-color: #a62433
+}
 .tags.dismissible > span.off:hover {background-color:#26a69a}
 .background {
-    background: url(../images/pomodoro2.jpeg) no-repeat center center;
+    background: url(../images/Tomighty.png) no-repeat center center;
 }

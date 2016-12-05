@@ -21,6 +21,7 @@ db.define_table('info',
 # I don't want to display the user email by default in all forms.
 
 db.info.user_email.readable = False
+db.info.id.readable = False
 db.info.user_email.writable = False
 db.info.first_name.writable = False
 db.info.last_name.writable = False

@@ -44,7 +44,7 @@ def others():
         # selectable=selectable,
         user_signature=False,
         deletable=False,
-        fields=[db.info.first_name, db.info.last_name, db.info.user_email, db.info.skills, db.info.available_times,
+        fields=[db.info.image, db.info.first_name, db.info.last_name, db.info.user_email, db.info.skills, db.info.available_times,
                 ],
         details=False,
         links=links,
@@ -112,7 +112,7 @@ def edit():
 
     if form.process().accepted:
         # At this point, the record has already been inserted.
-        session.flash = T('Checklist edited.')
+        session.flash = T('Profile edited.')
         redirect(URL('default', 'others'))
     elif form.errors:
         session.flash = T('Please enter correct values.')
