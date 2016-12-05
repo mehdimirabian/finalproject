@@ -51,7 +51,11 @@ audio {width:200px}
   clear:both;
 }
 
-.footer-content {position:relative; bottom:-4em; width:100%}
+.footer-content {
+    position:fixed;
+    bottom:-4em;
+    width:100%
+}
 
 .auth_navbar {
     white-space:nowrap;
@@ -60,7 +64,13 @@ audio {width:200px}
 /* Sticky footer end */
 
 .footer {
-    border-top:1px #DEDEDE solid;
+    /* border-top:1px #DEDEDE solid; */
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    height:50px;
+    margin-bottom:0px;
 }
 .header {
         /* background:<fill here for header image>; */

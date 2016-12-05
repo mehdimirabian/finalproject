@@ -1,5 +1,5 @@
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,11 +11,13 @@
     <link href="{{=URL('static','css/web2py.css')}}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{{=URL('static', 'font-awesome-4.6.3/css/font-awesome.min.css')}}">
     {{include "web2py_ajax.html"}}
-  </head>
-  <body class="black">
+</head>
+
+
+<body class="black">
     {{if response.flash:}}
     <div class="w2p_flash">
-      {{=response.flash}}
+        {{=response.flash}}
     </div>
     {{pass}}
 <header class="black padded">
@@ -25,36 +27,35 @@
     <div class="burger accordion">
       <input id="left-menu" type="checkbox">
       <ul class="menu">
-        <li>
-          <a href="{{=URL('default','index')}}" class="black"><i class="fa  fa-home"></i><strong>Home</strong></a>
+        <li><a href="{{=URL('default','index')}}" class="black"><i class="fa  fa-home"></i><strong> Home</strong></a>
         </li>
+
+        <li><a href="{{=URL('default','profile_view')}}" class="black">My Profile</a>
+        </li>
+
         <li><a class="black">Courses</a>
           <ul>
             <li><a>Topics</a></li>
             <li><a>Classes</a></li>
-
-
-            </li>
           </ul>
         </li>
-        <li><a class="black">Members</a>
 
+        <li><a href="{{=URL('default', 'others')}}" class="black">Members</a>
         </li>
+
         <li><a href="#about" class="black">About</a>
 
         <div class="modal" id="about">
-         <div class="twothirds rounded white padded">
-        <h2>Study smart with Codoro</h2>
-        <a class="close" href="#">×</a>
-             Codoro is a tutoring website, and a tool to more effective study practice, that allows students to seek
-             help from other students on campus, or even in the same classroom. By finding help as fast as possible with knowledgable people around you, Codoro
-             help all students to save time, and money by avoiding paying high rates to private tutors. Codoro allows
-             you have better time management by assuring to match you with the right candidate that can help you right on
-             time to get all of your tasks done in a timely manner.
-        <div class="right">
-          <a class="close btn rounded red" href="#">close</a>
-        </div>
-        </div>
+            <div class="twothirds rounded white padded">
+                <h4>Study smarter (not harder) with Codoro!</h4>
+                <a class="close" href="#">Close ×</a>
+                <center><img src="../images/pomodoro2.jpeg"></center><br>
+             Codoro is a tutoring website plus a tool to a more effective study pattern. We allow students to seek
+             help from other students on campus, by finding help as fast as possible with knowledgable people around you.
+             With Codoro, you can save time and money by avoiding paying high rates for private tutors. We can help
+             you to better your time management skill, and we can help match you with the right candidate who can help you
+             on a subject and get your assignment done in a timely manner.
+            </div>
         </div>
 
         </li>
@@ -68,12 +69,16 @@
     </div>
   </div>
 </div>
+
+<!-- This is the useless search bar
 <div class="container max900">
   <div class="fill middle">
-    <input class="fill rounded" placeholder="🔎 search here">
+    <input class="fill rounded" placeholder="🔎 Search here">
   </div>
 </div>
-    </header>
+--->
+
+</header>
 
 
     <!--[if lt IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
@@ -107,7 +112,6 @@
           <div id="poweredBy" class="pull-right">
             {{=T('Final Project')}}
             <a href="https://sites.google.com/a/ucsc.edu/luca/classes/cmps-183-hypermedia-and-the-web/cmps-183-fall-2016">CMPS 183 UCSC</a>
-
           </div>
       </div>
     </footer>

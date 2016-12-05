@@ -1,33 +1,15 @@
 {{extend 'layout.html'}}
 
 
- <div class="fill center" style="height:500px;">
-     <br>
-  <h1>Welcome to Codoro</h1>
-     <a class="btn rounded red" href={{=URL('default', 'others')}}>Browse Codoro Members <i class="fa fa-eye fa-lg"></i></a>
-
- </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{if profile is None:}}
-        <h2>You don't have a profile! Why don't you create one?</h2>
-        <h4>Navigate to the "See Other Users" link. Click the Add Record button on the upper left hand side.</h4>
-{{else:}}
-
-
-<div class="fill center" style="height:240px;background: image(powderblue);background-position:center center;padding-top:5px">
+<div class="fill center" style="height:500px;">
+    <br>
+    <h1>Welcome to Codoro</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CT70iCaG0Gs" frameborder="0" allowfullscreen></iframe>
+    <br><br>
+    <a class="btn rounded red" href="{{=URL('default', 'others')}}">I want to browse other students!</a>
+    <br><br>
+    {{if profile is None:}}
+    <h3>You don't have a profile! Why don't you create one?</h3>
+    <h5>Navigate to the "Members" tab and click the Add Record button on the upper left hand side.</h5>
+    {{pass}}
 </div>
-{{pass}}
-        {{pass}}
