@@ -1,0 +1,19 @@
+{{extend 'layout.html'}}
+
+
+<div class="fill center" style="height:500px;">
+    <br>
+    <br><br>
+    <a class="btn rounded red" href="{{=URL('default', 'others')}}">I want to browse other students!</a>
+    <br><br>
+    {{if profile is None:}}
+    <h3>You don't have a profile! Why don't you create one?</h3>
+    <h5>Navigate to the "Members" tab and click the Add Record button on the upper left hand side.</h5>
+    {{else:}}
+        <h2><center>{{=profile.first_name + " " + profile.last_name}}'s Profile</h2></center>
+        <center><img style="max-height: 350px; max-width: 350px;"src = {{=URL('default', 'download', args=[profile.image])}}></center>
+        <h5><center>Skill(s): {{=profile.skills}}</center></h5>
+        <h5><center>Availability: {{=profile.available_times}}</center></h5>
+        <h5><center>E-mail: {{=profile.user_email}}</center></h5>
+    {{pass}}
+</div>

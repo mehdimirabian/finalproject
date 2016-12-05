@@ -61,7 +61,10 @@ def others():
 
 @auth.requires_login()
 def index():
+    return dict()
 
+
+def my_profile():
     table = db(db.auth_user.email == auth.user.email).select().first()
     profile = db(db.info.user_email == table.email).select().first()
     print table

@@ -1,14 +1,12 @@
 {{extend 'layout.html'}}
 
-
-<div class="fill center" style="height:500px;">
-    <br>
     <h1>Welcome to Codoro</h1>
-    <br><br>
-    <a class="btn rounded red" href="{{=URL('default', 'others')}}">I want to browse other students!</a>
-    <br><br>
-    {{if profile is None:}}
-    <h3>You don't have a profile! Why don't you create one?</h3>
-    <h5>Navigate to the "Members" tab and click the Add Record button on the upper left hand side.</h5>
-    {{pass}}
-</div>
+<center><div class="twothirds rounded white padded">
+                <h4>Study smarter (not harder) with Codoro!</h4>
+                <img src="../static/images/pomodoro2.jpeg"><br>
+             Codoro is a tutoring website plus a tool to a more effective study pattern. We allow students to seek
+             help from other students on campus, by finding help as fast as possible with knowledgable people around you.
+             With Codoro, you can save time and money by avoiding paying high rates for private tutors. We can help
+             you to better your time management skill, and we can help match you with the right candidate who can help you
+             on a subject and get your assignment done in a timely manner.
+            </div></center>
