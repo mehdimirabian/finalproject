@@ -4,16 +4,18 @@
     <a href="{{=URL('default', 'others')}}" class="btn btn-info"> Go Back</a>
 </div>
 
-{{if profile:}}
-<br>
-<h3><center>{{=profile.first_name + " " + profile.last_name}}</h3></center>
-<img style="max-height: 350px; max-width: 350px;"src = {{=URL('default', 'download', args=[profile.image])}}>
+<div class="text-left">
+    {{if profile:}}
+    <br>
+    <h3><center>{{=profile.first_name + " " + profile.last_name}}</h3></center>
+    <img style="max-height: 350px; max-width: 350px;"src = {{=URL('default', 'download', args=[profile.image])}}>
 
-{{if table is not None:}}
-    <h5>Skill(s): {{=profile.skills}}</h5>
-    <h5>Availability: {{=profile.available_times}}</h5>
-    <h6>E-mail: {{=profile.user_email}}</h6>
-{{else:}}
-    <h5>Uh-oh! This person doesn't have a profile yet. :/</h5>
-{{pass}}
-{{pass}}
+    {{if table is not None:}}
+        <h5>Skill(s): {{=profile.skills}}</h5>
+        <h5>Availability: {{=profile.available_times}}</h5>
+        <h6>E-mail: {{=profile.user_email}}</h6>
+    {{else:}}
+        <h5>Uh-oh! This person doesn't have a profile yet. :/</h5>
+    {{pass}}
+    {{pass}}
+</div>
