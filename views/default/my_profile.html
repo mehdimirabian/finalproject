@@ -5,7 +5,6 @@
     {{if profile is None:}}
     <h2><font color="#a9a9a9">You don't have a profile! Why don't you create one?</font></h2>
     <h5>Navigate to the "Members" tab and click the Add Record button on the upper left hand side.</h5>
-    <center><a style="float:top" class="btn rounded red" href="{{=URL('default', 'others')}}">I want to browse other students</a></center>
 
     {{else:}}
     <h2><center>{{=profile.first_name + " " + profile.last_name}}</h2></center>
