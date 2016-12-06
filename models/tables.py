@@ -14,6 +14,7 @@ db.define_table('info',
                 Field('last_name', default=auth.user.last_name if auth.user_id else None, requires=[IS_NOT_EMPTY(), IS_ALPHANUMERIC()]),
                 Field('skills', 'text'),
                 Field('available_times', 'text'),
+                Field('courses', 'text'),
                 Field('image', default=auth.user.image if auth.user_id else None)
                 )
 

@@ -44,7 +44,7 @@ def others():
         # selectable=selectable,
         user_signature=False,
         deletable=False,
-        fields=[db.info.image, db.info.first_name, db.info.last_name, db.info.user_email, db.info.skills, db.info.available_times,
+        fields=[db.info.image, db.info.courses, db.info.first_name, db.info.last_name, db.info.user_email, db.info.skills, db.info.available_times,
                 ],
         details=False,
         links=links,
